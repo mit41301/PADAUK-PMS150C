@@ -5,7 +5,6 @@
   https://github.com/bigjosh/SimpleNeoPixelDemo/blob/master/SimpleNeopixelDemo/SimpleNeopixelDemo.ino
   */
 
-
 #include	"extern.h"
 	.WRITER package 8, 1, 7, 5, 6, 4, 3, 2, 8, 0x3F, 0x3F, 4 
  //SO8, checks disabled, connecting SOT-23 package with jumper wires instead
@@ -37,7 +36,6 @@ send0 MACRO
 		$ LED low;
 		.DELAY 2;
 ENDM
-
 
 void SendRGB (void) {
 	DISGINT; //Let's not get interrupted
@@ -107,8 +105,6 @@ void	FPPA0 (void)
 				
 	count = 0;
 
-
- 
 while (1) //Main loop
 {
 if ( BTN == 1) { //If button is not pressed
@@ -154,7 +150,6 @@ if ( BTN == 1) { //If button is not pressed
 	}
 	hue+=hueinc;
 	} while (--pixels);
-
 
 	.delay(8000); //Should be increased if fewer LED's are used
 	firstPixelHue+=firstinc;
@@ -239,13 +234,11 @@ if ( BTN == 1) { //If button is not pressed
 
 	}
 
-
 //      ...
 //      wdreset;
 
 	} 
 }
-
 
 void	Interrupt (void)
 {
@@ -255,10 +248,9 @@ void	Interrupt (void)
 	{	
 		Intrq.T16	=	0;
 
-		count ++;  // 16,384uS 61 == 999,424 uS ¡Ü 1S
-
+		count ++;  // 16,384uS 61 == 999,424 uS Â¡Ãœ 1S
 	}
 
-
 	popaf;
+
 }
